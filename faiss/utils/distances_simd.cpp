@@ -343,8 +343,8 @@ void fvec_op_ny_D4<ElementOpIP>(
 
     if (ny8 > 0) {
         // process 8 D4-vectors per loop.
-        _mm_prefetch(y, _MM_HINT_NTA);
-        _mm_prefetch(y + 16, _MM_HINT_NTA);
+        _mm_prefetch((const char *)y, _MM_HINT_NTA);
+        _mm_prefetch((const char *)(y + 16), _MM_HINT_NTA);
 
         // m0 = (x[0], x[0], x[0], x[0], x[0], x[0], x[0], x[0])
         const __m256 m0 = _mm256_set1_ps(x[0]);
@@ -413,8 +413,8 @@ void fvec_op_ny_D4<ElementOpL2>(
 
     if (ny8 > 0) {
         // process 8 D4-vectors per loop.
-        _mm_prefetch(y, _MM_HINT_NTA);
-        _mm_prefetch(y + 16, _MM_HINT_NTA);
+        _mm_prefetch((const char *)y, _MM_HINT_NTA);
+        _mm_prefetch((const char *)(y + 16), _MM_HINT_NTA);
 
         // m0 = (x[0], x[0], x[0], x[0], x[0], x[0], x[0], x[0])
         const __m256 m0 = _mm256_set1_ps(x[0]);
@@ -697,8 +697,8 @@ size_t fvec_L2sqr_ny_nearest_D2(
     // process 8 D2-vectors per loop.
     const size_t ny8 = ny / 8;
     if (ny8 > 0) {
-        _mm_prefetch(y, _MM_HINT_T0);
-        _mm_prefetch(y + 16, _MM_HINT_T0);
+        _mm_prefetch((const char *)y, _MM_HINT_T0);
+        _mm_prefetch((const char *)(y + 16), _MM_HINT_T0);
 
         // track min distance and the closest vector independently
         // for each of 8 AVX2 components.
@@ -713,7 +713,7 @@ size_t fvec_L2sqr_ny_nearest_D2(
         const __m256 m1 = _mm256_set1_ps(x[1]);
 
         for (; i < ny8 * 8; i += 8) {
-            _mm_prefetch(y + 32, _MM_HINT_T0);
+            _mm_prefetch((const char *)(y + 32), _MM_HINT_T0);
 
             __m256 v0;
             __m256 v1;
