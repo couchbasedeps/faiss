@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File GpuIndex.h &mdash; Faiss  documentation</title>
@@ -202,6 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Quantizer_8h.html">File Quantizer.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftFlatIndex_8cuh.html">File RaftFlatIndex.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftIVFFlat_8cuh.html">File RaftIVFFlat.cuh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RaftIVFPQ_8cuh.html">File RaftIVFPQ.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftUtils_8h.html">File RaftUtils.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ReductionOperators_8cuh.html">File ReductionOperators.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reductions_8cuh.html">File Reductions.cuh</a></li>
@@ -234,6 +235,7 @@
 <li class="toctree-l2"><a class="reference internal" href="approx__topk_8h.html">File approx_topk.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approx__topk__hamming_8h.html">File approx_topk_hamming.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="avx512_8h.html">File avx512.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bf16_8h.html">File bf16.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clone__index_8h.html">File clone_index.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code__distance-avx2_8h.html">File code_distance-avx2.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code__distance-generic_8h.html">File code_distance-generic.h</a></li>
@@ -274,9 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="simd__result__handlers_8h.html">File simd_result_handlers.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib_8h.html">File simdlib.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__avx2_8h.html">File simdlib_avx2.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simdlib__avx512_8h.html">File simdlib_avx512.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__based_8h.html">File simdlib_based.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__emulated_8h.html">File simdlib_emulated.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__neon_8h.html">File simdlib_neon.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simdlib__ppc64_8h.html">File simdlib_ppc64.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sorting_8h.html">File sorting.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transpose-avx2-inl_8h.html">File transpose-avx2-inl.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils_8h.html">File utils.h</a></li>
@@ -347,6 +351,12 @@
 <span id="_CPPv3N5faiss3gpuE"></span><span id="_CPPv2N5faiss3gpuE"></span><span id="faiss::gpu"></span><span class="target" id="namespacefaiss_1_1gpu"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpu</span></span></span><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5faiss3gpu15should_use_raftE14GpuIndexConfig">
+<span id="_CPPv3N5faiss3gpu15should_use_raftE14GpuIndexConfig"></span><span id="_CPPv2N5faiss3gpu15should_use_raftE14GpuIndexConfig"></span><span id="faiss::gpu::should_use_raft__GpuIndexConfig"></span><span class="target" id="GpuIndex_8h_1a7c09e232a8ffdc821a88f88858351529"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">should_use_raft</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5faiss3gpu14GpuIndexConfigE" title="faiss::gpu::GpuIndexConfig"><span class="n"><span class="pre">GpuIndexConfig</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">config_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss3gpu15should_use_raftE14GpuIndexConfig" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A centralized function that determines whether RAFT should be used based on various conditions (such as unsupported architecture) </p>
+</dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5faiss3gpu15tryCastGpuIndexEPN5faiss5IndexE">
 <span id="_CPPv3N5faiss3gpu15tryCastGpuIndexEPN5faiss5IndexE"></span><span id="_CPPv2N5faiss3gpu15tryCastGpuIndexEPN5faiss5IndexE"></span><span id="faiss::gpu::tryCastGpuIndex__faiss::IndexP"></span><span class="target" id="GpuIndex_8h_1a71050b5bacaf9b140ffd8feebf6369aa"></span><a class="reference internal" href="../class/classfaiss_1_1gpu_1_1GpuIndex.html#_CPPv4N5faiss3gpu8GpuIndexE" title="faiss::gpu::GpuIndex"><span class="n"><span class="pre">GpuIndex</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">tryCastGpuIndex</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="AdditiveQuantizer_8h.html#_CPPv45faiss" title="faiss"><span class="n"><span class="pre">faiss</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="Index_8h.html#_CPPv4N5faiss5IndexE" title="faiss::Index"><span class="n"><span class="pre">Index</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss3gpu15tryCastGpuIndexEPN5faiss5IndexE" title="Permalink to this definition"></a><br /></dt>

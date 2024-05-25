@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File ResultHandler.h &mdash; Faiss  documentation</title>
@@ -202,6 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Quantizer_8h.html">File Quantizer.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftFlatIndex_8cuh.html">File RaftFlatIndex.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftIVFFlat_8cuh.html">File RaftIVFFlat.cuh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RaftIVFPQ_8cuh.html">File RaftIVFPQ.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RaftUtils_8h.html">File RaftUtils.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ReductionOperators_8cuh.html">File ReductionOperators.cuh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reductions_8cuh.html">File Reductions.cuh</a></li>
@@ -234,6 +235,7 @@
 <li class="toctree-l2"><a class="reference internal" href="approx__topk_8h.html">File approx_topk.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approx__topk__hamming_8h.html">File approx_topk_hamming.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="avx512_8h.html">File avx512.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bf16_8h.html">File bf16.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clone__index_8h.html">File clone_index.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code__distance-avx2_8h.html">File code_distance-avx2.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code__distance-generic_8h.html">File code_distance-generic.h</a></li>
@@ -274,9 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="simd__result__handlers_8h.html">File simd_result_handlers.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib_8h.html">File simdlib.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__avx2_8h.html">File simdlib_avx2.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simdlib__avx512_8h.html">File simdlib_avx512.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__based_8h.html">File simdlib_based.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__emulated_8h.html">File simdlib_emulated.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simdlib__neon_8h.html">File simdlib_neon.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simdlib__ppc64_8h.html">File simdlib_ppc64.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sorting_8h.html">File sorting.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transpose-avx2-inl_8h.html">File transpose-avx2-inl.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils_8h.html">File utils.h</a></li>
@@ -382,7 +386,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t">
-<span id="_CPPv3N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t"></span><span id="_CPPv2N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t"></span><span id="faiss::BlockResultHandler::begin_multiple__s.s"></span><span class="target" id="structfaiss_1_1BlockResultHandler_1a6ec6f42f7cd3c812beeadcc9f0d4df56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin_multiple</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i0</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t"></span><span id="_CPPv2N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t"></span><span id="faiss::BlockResultHandler::begin_multiple__s.s"></span><span class="target" id="structfaiss_1_1BlockResultHandler_1aa6ad904b25be73e7f32c2f8daa2a5a68"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin_multiple</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i0_2</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i1_2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss18BlockResultHandler14begin_multipleE6size_t6size_t" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -452,7 +456,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T">
-<span id="_CPPv3N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T"></span><span id="_CPPv2N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T"></span><span id="faiss::Top1BlockResultHandler::add_results__s.s.TCP"></span><span class="target" id="structfaiss_1_1Top1BlockResultHandler_1aba342a0023bc3cca3c8fda11d85052f1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_results</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j0</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5faiss22Top1BlockResultHandler1TE" title="faiss::Top1BlockResultHandler::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dis_tab</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T"></span><span id="_CPPv2N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T"></span><span id="faiss::Top1BlockResultHandler::add_results__s.s.TCP"></span><span class="target" id="structfaiss_1_1Top1BlockResultHandler_1a4336127604f52e2f21170750f7bc0882"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_results</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j0</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5faiss22Top1BlockResultHandler1TE" title="faiss::Top1BlockResultHandler::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dis_tab_2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5faiss22Top1BlockResultHandler11add_resultsE6size_t6size_tPK1T" title="Permalink to this definition"></a><br /></dt>
 <dd><p>add results for query i0..i1 and j0..j1 </p>
 </dd></dl>
 
@@ -512,7 +516,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t">
-<span id="_CPPv3N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t"></span><span id="_CPPv2N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t"></span><span id="faiss::Top1BlockResultHandler::SingleResultHandler::begin__sC"></span><span class="target" id="structfaiss_1_1Top1BlockResultHandler_1_1SingleResultHandler_1a2fd9d6de3769b1816d7da8b56a1f7a8a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">current_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t"></span><span id="_CPPv2N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t"></span><span id="faiss::Top1BlockResultHandler::SingleResultHandler::begin__sC"></span><span class="target" id="structfaiss_1_1Top1BlockResultHandler_1_1SingleResultHandler_1a17aa52718da78dc5c231eb4a478d483c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">current_idx_2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss22Top1BlockResultHandler19SingleResultHandler5beginEK6size_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>begin results for query # i </p>
 </dd></dl>
 
@@ -915,7 +919,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t">
-<span id="_CPPv3N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t"></span><span id="_CPPv2N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t"></span><span id="faiss::ReservoirBlockResultHandler::SingleResultHandler::begin__s"></span><span class="target" id="structfaiss_1_1ReservoirBlockResultHandler_1_1SingleResultHandler_1a6f93ae7c6aad24241e383459c39673de"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qno</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t"></span><span id="_CPPv2N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t"></span><span id="faiss::ReservoirBlockResultHandler::SingleResultHandler::begin__s"></span><span class="target" id="structfaiss_1_1ReservoirBlockResultHandler_1_1SingleResultHandler_1abd666be5639fa1551dd12d8ac29dc78d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qno_2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5faiss27ReservoirBlockResultHandler19SingleResultHandler5beginE6size_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>begin results for query # i </p>
 </dd></dl>
 
